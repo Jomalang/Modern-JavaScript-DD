@@ -1,8 +1,8 @@
-var x = 1;
+let x = 1;
 
 if(true){
-    var x = 10;
+    let x = 10;
     console.log(x);
 }
 
-console.log(x);
+console.log(x)

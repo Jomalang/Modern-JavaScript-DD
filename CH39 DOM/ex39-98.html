@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        color: red;
+    }
+    .box {
+        width:100px;
+        height:50px;
+        background-color: cornsilk;
+        border:1px solid black;
+    }
+</style>
+<body>
+   <div class = "box">Box</div> 
+</body>
+<script>
+    const $box = document.querySelector('.box');
+
+    // .box요소에 적용된 모든 CSS스타일을 CSSStyleDeclaration 객체에 담아 반환한다
+    const computedStyle = window.getComputedStyle($box);
+    console.log(computedStyle);
+
+    //임베딩 스타일 확인
+    console.log(computedStyle.width);
+    console.log(computedStyle.height);
+    console.log(computedStyle.backgroundColor);
+    console.log(computedStyle.border);
+
+    //상속 스타일 확인(body -> .box)
+    console.log(computedStyle.color);
+
+    //기본 스타일 확인
+    console.log(computedStyle.display);
+</script>
+</html>

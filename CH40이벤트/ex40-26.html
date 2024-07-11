@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type ="text"/> 
+    <em class="message"></em>
+</body>
+    <script>
+        const $input =document.querySelector('input[type=text]');
+        const $msg = document.querySelector('.message');
+
+        //e.key는 입력한 키 값을 문자열로 반환한다.
+        //입력한 키가 'Enter'일 경우엔 무시한다.
+        $input.onkeyup = e => {
+            if(e.key !== 'Enter') return;
+
+            $msg.textContent = e.target.value;
+            e.target.value = '';
+        };
+    </script>
+</html>
